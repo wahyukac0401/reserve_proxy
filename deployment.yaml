@@ -9,7 +9,7 @@ spec:
   ports:
     - protocol: TCP
       port: 30101
-      targetPort: 80
+      targetPort: 443
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -33,4 +33,4 @@ spec:
       - name: reverse-proxy
         image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
         ports:
-        - containerPort: 80
+        - containerPort: 443
